@@ -1,0 +1,16 @@
+runtime: python310
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /
+  static_files: tga/index.html
+  upload: tga/index.html
+
+- url: /index.html
+  static_files: tga/index.html
+  upload: tga/index.html
+
+- url: /(.*\.(ico|js|css))$
+  static_files: tga/\1
+  upload: tga/.*\.(ico|js|css)$

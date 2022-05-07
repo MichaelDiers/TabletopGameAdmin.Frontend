@@ -1,0 +1,33 @@
+name: TabletopGameAdmin.Frontend
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - tga/**
+      - .github/workflows/TabletopGameAdmin.Frontend.yaml
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    environment: test
+    env:
+      GCP_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
+      PROJECT_ID: ${{ secrets.PROJECT_ID }}
+      WORKING_DIRECTORY_NPM: tga
+      WORKING_DIRECTORY_GCLOUD: tga/dist
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: run ci
+        run: npm run ci
+        working-directory: ${{ env.WORKING_DIRECTORY_NPM }}
+      - id: 'auth'
+        uses: 'google-github-actions/auth@v0'
+        with:
+          credentials_json: '${{ env.GCP_CREDENTIALS }}'
+      - name: 'Set up Cloud SDK'
+        uses: 'google-github-actions/setup-gcloud@v0'
+      - name: deploy app
+        run: 'gcloud app deploy app.yaml --project=${{ env.PROJECT_ID }}'
+        working-directory: ${{ env.WORKING_DIRECTORY_GCLOUD }}

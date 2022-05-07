@@ -2,7 +2,8 @@
   "name": "tga",
   "version": "0.0.0",
   "scripts": {
-    "ci": "npm install && npm run build && npm run test:prod",
+    "appengine": "cp app.yaml dist/app.yaml",
+    "ci": "npm install && npm run build && npm run test:prod && npm run appengine",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
