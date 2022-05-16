@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "5FMvATZmMGe2iKJVLThkKVCgrWfClcsvCnTOwLDwik0Z7hL1am9IeCp/MX5+w8ztQ3NDE8QPeWE5A4d0nKATWQ==",
+  "success": true,
+  "projectFilePath": "C:\\work\\repos\\TabletopGameAdmin.Frontend\\TabletopGameAdmin.HtmlScssAjax\\TabletopGameAdmin.HtmlScssAjax\\TabletopGameAdmin.HtmlScssAjax.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\md\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.14.0\\microsoft.visualstudio.azure.containers.tools.targets.1.14.0.nupkg.sha512"
+  ],
+  "logs": []
+}
